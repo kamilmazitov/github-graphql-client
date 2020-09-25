@@ -1,22 +1,42 @@
 import React from "react";
-import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
 import { StyledSearchResults } from "./styles";
 import UserTile from "../UserTile";
+import Debug from "../Debug";
+import { ApolloError } from "apollo-boost";
+import Container from "../Container";
 
-const SearchResults = () => {
-  // const { data, loading, error } = useQuery<ISearchResponse>(SEARCH_USER);
+interface IUserSearchResult {
+  node: {
+    id: string;
+    name: string;
+    avatarUrl: string;
+  };
+}
 
-  // if (loading) return <p>Loading..</p>;
-  // if (error) return <p>Error...</p>;
+interface IProps {
+  loading: boolean;
+  error: ApolloError | undefined;
+  data: {
+    search: {
+      edges: IUserSearchResult[];
+    };
+  };
+}
+
+const SearchResults = ({ loading, error, data }: IProps) => {
+  if (loading) return <p>Loading..</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
-    <p>hello</p>
-    // <StyledSearchResults>
-    //   {data!.search.edges.map(item => {
-    //     return <UserTile key={item.node.id} item={item} />;
-    //   })}
-    // </StyledSearchResults>
+    <Container maxWidth={1200}>
+      <StyledSearchResults>
+        {data &&
+          data.search.edges.map(item => {
+            return <UserTile key={item.node.id} item={item} />;
+          })}
+      </StyledSearchResults>
+      <Debug data={data} />
+    </Container>
   );
 };
 
