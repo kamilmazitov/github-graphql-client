@@ -4,7 +4,7 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import client from "../../apollo-client";
 import { GlobaStyles } from "../../config/globalstyles";
 import Layout from "../Layout";
-import Home from "../../pages/Home";
+import Search from "../../pages/Search";
 
 const About = () => <div>About</div>;
 
@@ -16,12 +16,13 @@ const App: React.FC = () => {
       <Router>
         <Layout>
           <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
             <Route path="/">
-              <Home />
+              <Search />
             </Route>
+
+            {/* <Route path="/about">
+              <About />
+            </Route> */}
           </Switch>
         </Layout>
       </Router>
