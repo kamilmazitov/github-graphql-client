@@ -1,6 +1,5 @@
 import React from "react";
 import { StyledButton } from "./styles";
-import { FetchMoreOptions } from "apollo-boost";
 
 interface IProps {
   fetchMore: any;

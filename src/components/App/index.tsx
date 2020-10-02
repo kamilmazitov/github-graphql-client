@@ -6,12 +6,9 @@ import { GlobaStyles } from "../../config/globalstyles";
 import Layout from "../Layout";
 import Search from "../../pages/Search";
 
-const About = () => <div>About</div>;
-
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      {/* <ThemeProvider theme={customTheme}> */}
       <GlobaStyles />
       <Router>
         <Layout>
@@ -19,14 +16,9 @@ const App: React.FC = () => {
             <Route path="/">
               <Search />
             </Route>
-
-            {/* <Route path="/about">
-              <About />
-            </Route> */}
           </Switch>
         </Layout>
       </Router>
-      {/* </ThemeProvider> */}
     </ApolloProvider>
   );
 };
