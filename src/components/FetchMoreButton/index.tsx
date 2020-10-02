@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "./styles";
+import Button from "../Button";
 
 interface IProps {
   fetchMore: any;
@@ -27,9 +27,7 @@ const FetchMoreButton = ({ fetchMore, edges }: IProps) => {
   };
 
   return (
-    <StyledButton onClick={() => handleLoadMore(fetchMore, edges)}>
-      Load more
-    </StyledButton>
+    <Button onClick={() => handleLoadMore(fetchMore, edges)}>Load more</Button>
   );
 };
 

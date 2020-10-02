@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Container from "../../components/Container";
-import SearchResults from "../../components/SearchResults";
+import UserList from "../../components/UserList";
 import Input from "../../components/Input";
 
 const Search = () => {
@@ -24,7 +24,7 @@ const Search = () => {
           <Input value={formValue} onChange={e => handleChange(e)} />
         </form>
       </Container>
-      <SearchResults searchTerm={searchTerm} />
+      <UserList searchTerm={searchTerm} />
     </>
   );
 };

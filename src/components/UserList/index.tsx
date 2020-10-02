@@ -17,7 +17,7 @@ interface IProps {
   searchTerm: string;
 }
 
-const SearchResults = ({ searchTerm }: IProps) => {
+const UserList = ({ searchTerm }: IProps) => {
   const { data, loading, error, fetchMore } = useQuery<ISearchUserResult>(
     SEARCH_USER,
     {
@@ -42,7 +42,7 @@ const SearchResults = ({ searchTerm }: IProps) => {
   );
 };
 
-export default SearchResults;
+export default UserList;
 
 const SEARCH_USER = gql`
   query userSearch($queryString: String!, $cursor: String) {
