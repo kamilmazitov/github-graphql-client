@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledTile, Avatar } from "./styles";
+import { StyledTile, Avatar, LoginName } from "./styles";
 
 const UserTile = ({ item }: any) => {
   return (
@@ -13,7 +13,7 @@ const UserTile = ({ item }: any) => {
       </Avatar>
       <div>
         <h3>{item.node.name}</h3>
-        <p>{item.node.login}</p>
+        <LoginName>{item.node.login}</LoginName>
       </div>
     </StyledTile>
   );

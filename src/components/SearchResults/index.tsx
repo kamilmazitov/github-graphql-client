@@ -41,8 +41,10 @@ const SearchResults = ({ searchTerm }: IProps) => {
             return <UserTile key={item.node.id} item={item} />;
           })}
       </UserGrid>
-      <FetchMoreButton edges={data.search.edges} fetchMore={fetchMore} />
-      <Debug data={data} />
+      {data.search.edges.length > 0 && (
+        <FetchMoreButton edges={data.search.edges} fetchMore={fetchMore} />
+      )}
+      {/* <Debug data={data} /> */}
     </Container>
   );
 };
