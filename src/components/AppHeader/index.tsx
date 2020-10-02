@@ -11,10 +11,7 @@ const AppHeader = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/users">Repositories</Link>
+            <Link to="/popular">popular</Link>
           </li>
         </ul>
       </Nav>

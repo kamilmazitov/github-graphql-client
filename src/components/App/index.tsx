@@ -5,6 +5,7 @@ import client from "../../apollo-client";
 import { GlobaStyles } from "../../config/globalstyles";
 import Layout from "../Layout";
 import Search from "../../pages/Search";
+import Popular from "../../pages/Popular";
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,9 @@ const App: React.FC = () => {
       <Router>
         <Layout>
           <Switch>
+            <Route path="/popular">
+              <Popular />
+            </Route>
             <Route path="/">
               <Search />
             </Route>
