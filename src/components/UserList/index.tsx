@@ -9,7 +9,7 @@ import { IUser } from "../../types";
 
 interface ISearchUserResult {
   search: {
-    edges: { cursor: string; user: IUser }[];
+    edges: Array<{ cursor: string; user: IUser }>;
   };
 }
 

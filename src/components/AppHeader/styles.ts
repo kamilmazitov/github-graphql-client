@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { theme } from "../../config/theme";
 
 export const StyledHeader = styled.header`
-  background-color: aliceblue;
   padding: 1rem;
+  background-color: ${theme.colors.tileGrey};
 `;
 
 export const Nav = styled.nav`
@@ -11,6 +12,10 @@ export const Nav = styled.nav`
     display: flex;
     li {
       margin-right: 10px;
+      a {
+        text-decoration: none;
+        color: whitesmoke;
+      }
     }
   }
 `;

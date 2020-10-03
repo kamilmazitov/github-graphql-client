@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 export const GlobaStyles = createGlobalStyle`
 *,
@@ -39,6 +40,8 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: Arial, Helvetica, sans-serif;
+  color: #e0e0e0;
+  background-color: ${theme.colors.backgroundGrey};
 }
 
 ul,

@@ -2,21 +2,14 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
 import Container from "../Container";
-import { StyledList } from "./styles";
-import RepoListItem from "../RepoListItem";
+import { Grid } from "./styles";
 
-interface IRepository {
-  name: string;
-  id: string;
-  descriptionHTML: string;
-  stargazers: {
-    totalCount: number;
-  };
-}
+import RepoListItem from "../RepoListItem";
+import { IRepository } from "../../types";
 
 interface IRepoSearchResult {
   search: {
-    edges: { repository: IRepository }[];
+    edges: Array<{ repository: IRepository }>;
   };
 }
 
@@ -35,12 +28,12 @@ const RepoList = ({ language = "javascript" }: IProps) => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <Container>
-      <StyledList>
+    <Container maxWidth={1900}>
+      <Grid>
         {data?.search.edges.map(({ repository }) => (
           <RepoListItem key={repository.id} repository={repository} />
         ))}
-      </StyledList>
+      </Grid>
     </Container>
   );
 };

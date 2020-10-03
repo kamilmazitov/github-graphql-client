@@ -6,8 +6,9 @@ export const theme = {
     large: "2em"
   },
   colors: {
-    grey: "#607D8B"
+    grey: "#607D8B",
+    tileGrey: "#2c3041",
+    backgroundGrey: "#232631",
+    primary: "#5e35b1"
   }
 };
-
-// https://www.materialui.co/colors

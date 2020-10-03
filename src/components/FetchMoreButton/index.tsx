@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const FetchMoreButton = ({ fetchMore, edges }: IProps) => {
-  const handleLoadMore = (fetchMore: any, edges: any) => {
+  const handleLoadMore = () => {
     const { cursor } = edges[edges.length - 1];
     fetchMore({
       variables: { cursor },
@@ -26,9 +26,7 @@ const FetchMoreButton = ({ fetchMore, edges }: IProps) => {
     });
   };
 
-  return (
-    <Button onClick={() => handleLoadMore(fetchMore, edges)}>Load more</Button>
-  );
+  return <Button onClick={() => handleLoadMore()}>Load more</Button>;
 };
 
 export default FetchMoreButton;

@@ -1,12 +1,17 @@
 import React from "react";
+import { StyledRepoItem } from "./styles";
+import { IRepository } from "../../types";
 
-const RepoListItem = ({ repository }: any) => {
+interface IProps {
+  repository: IRepository;
+}
+
+const RepoListItem = ({ repository }: IProps) => {
   return (
-    <li>
-      {JSON.stringify(repository)}
-      {/* {repository.name} - {repository.stargazers.totalCount}
-      <p>{repository.descriptionHTML}</p> */}
-    </li>
+    <StyledRepoItem>
+      <h3>{repository.name}</h3>
+      <p>{repository.stargazers.totalCount}</p>
+    </StyledRepoItem>
   );
 };
 
