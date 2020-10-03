@@ -4,12 +4,17 @@ import UserTile from "../UserTile";
 import { gql } from "apollo-boost";
 import Container from "../Container";
 import { useQuery } from "@apollo/react-hooks";
-import FetchMoreButton from "../FetchMoreButton";
 import { IUser } from "../../types";
+import Button from "../Button";
+
+interface IEdge {
+  cursor: string;
+  user: IUser;
+}
 
 interface ISearchUserResult {
   search: {
-    edges: Array<{ cursor: string; user: IUser }>;
+    edges: IEdge[];
   };
 }
 
@@ -24,6 +29,27 @@ const UserList = ({ searchTerm }: IProps) => {
       variables: { queryString: searchTerm }
     }
   );
+
+  const handleLoadMore = (edges: IEdge[]) => {
+    const { cursor } = edges[edges.length - 1];
+
+    fetchMore({
+      variables: { cursor },
+      updateQuery: (previousResult: any, { fetchMoreResult }: any) => {
+        return {
+          ...previousResult,
+          search: {
+            __typename: previousResult.search.__typename,
+            edges: [
+              ...previousResult.search.edges,
+              ...fetchMoreResult.search.edges
+            ]
+          }
+        };
+      }
+    });
+  };
+
   if (loading) return <p>Loading..</p>;
   if (error) return <p>{error.message}</p>;
 
@@ -36,7 +62,9 @@ const UserList = ({ searchTerm }: IProps) => {
           })}
       </UserGrid>
       {data && data.search.edges.length > 0 && (
-        <FetchMoreButton edges={data.search.edges} fetchMore={fetchMore} />
+        <Button onClick={() => handleLoadMore(data.search.edges)}>
+          load more
+        </Button>
       )}
     </Container>
   );

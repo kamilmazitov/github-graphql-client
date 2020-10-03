@@ -7,7 +7,7 @@
     "object-literal-sort-keys": false,
     "trailing-comma": false,
     "curly": false,
-    "arrow-parens": true
+    "arrow-parens": false
   },
   "rulesDirectory": []
 }

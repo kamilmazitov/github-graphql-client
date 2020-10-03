@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../config/theme";
 
 export const StyledButton = styled.button`
   display: inline-block;
@@ -8,7 +9,7 @@ export const StyledButton = styled.button`
   font-size: 1rem;
   padding: 0.8rem;
   line-height: 1;
-  background: #5e35b1;
+  background: ${theme.colors.primary};
   border-radius: 3px;
   -webkit-appearance: none;
   color: white;
