@@ -8,8 +8,20 @@ export interface IUser {
 export interface IRepository {
   name: string;
   id: string;
-  descriptionHTML: string;
+  description: string;
+  updatedAt: Date;
+  licenseInfo: {
+    spdxId: string;
+  };
   stargazers: {
     totalCount: number;
+  };
+  forks: {
+    totalCount: number;
+  };
+  primaryLanguage: {
+    id: string;
+    name: string;
+    color: string;
   };
 }

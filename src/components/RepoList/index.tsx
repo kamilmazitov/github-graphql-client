@@ -49,12 +49,21 @@ const SEARCH_POPULAR_REPOS = gql`
           ... on Repository {
             id
             name
-            descriptionHTML
+            description
             stargazers {
               totalCount
             }
+            updatedAt
+            licenseInfo {
+              spdxId
+            }
             forks {
               totalCount
+            }
+            primaryLanguage {
+              id
+              name
+              color
             }
           }
         }

@@ -1,10 +1,13 @@
 import React from "react";
 import { StyledHeader, Nav } from "./styles";
 import { Link } from "react-router-dom";
+import { GoMarkGithub } from "react-icons/go";
+import { theme } from "../../config/theme";
 
 const AppHeader = () => {
   return (
     <StyledHeader>
+      <GoMarkGithub color={theme.colors.primary} size={50} />
       <Nav>
         <ul>
           <li>

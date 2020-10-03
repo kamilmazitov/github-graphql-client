@@ -9,6 +9,8 @@ export const theme = {
     grey: "#607D8B",
     tileGrey: "#2c3041",
     backgroundGrey: "#232631",
-    primary: "#5e35b1"
+    primary: "#5e35b1",
+    text: "#e0e0e0",
+    textSecondary: "#b3b3b3"
   }
 };
