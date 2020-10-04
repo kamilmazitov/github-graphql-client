@@ -15,7 +15,7 @@ export const Nav = styled.nav`
     margin-left: ${theme.spacing.normal};
     font-weight: 700;
     li {
-      margin-right: 10px;
+      margin-right: ${theme.spacing.normal};
       a {
         text-decoration: none;
         color: whitesmoke;

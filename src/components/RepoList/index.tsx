@@ -1,7 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 import { gql } from "apollo-boost";
-import Container from "../Container";
 import { Grid } from "./styles";
 
 import RepoListItem from "../RepoListItem";
@@ -40,7 +39,7 @@ export default RepoList;
 
 const SEARCH_POPULAR_REPOS = gql`
   query searchPopularRepos($queryString: String!) {
-    search(query: $queryString, type: REPOSITORY, first: 10) {
+    search(query: $queryString, type: REPOSITORY, first: 12) {
       repositoryCount
       edges {
         repository: node {

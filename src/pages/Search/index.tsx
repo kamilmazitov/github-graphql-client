@@ -17,15 +17,13 @@ const Search = () => {
   };
 
   return (
-    <>
-      <Container>
-        <h1>User search</h1>
-        <form onSubmit={handleSubmit}>
-          <Input value={formValue} onChange={e => handleChange(e)} />
-        </form>
-      </Container>
+    <Container>
+      <h1>User search</h1>
+      <form onSubmit={handleSubmit} style={{ marginBottom: 15, maxWidth: 500 }}>
+        <Input value={formValue} onChange={e => handleChange(e)} />
+      </form>
       <UserList searchTerm={searchTerm} />
-    </>
+    </Container>
   );
 };
 

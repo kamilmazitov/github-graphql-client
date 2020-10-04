@@ -6,6 +6,7 @@ import { GlobaStyles } from "../../config/globalstyles";
 import Layout from "../Layout";
 import Search from "../../pages/Search";
 import Popular from "../../pages/Popular";
+import Account from "../../pages/Account";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,9 @@ const App: React.FC = () => {
           <Switch>
             <Route path="/popular">
               <Popular />
+            </Route>
+            <Route path="/account">
+              <Account />
             </Route>
             <Route path="/">
               <Search />

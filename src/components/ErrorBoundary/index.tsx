@@ -5,7 +5,6 @@ interface IProps {
 }
 
 interface IState {
-  count: number;
   hasError: boolean;
 }
 
@@ -15,7 +14,6 @@ class ErrorBoundary extends React.Component<IProps, IState> {
   }
 
   public state = {
-    count: 0,
     hasError: false
   };
 

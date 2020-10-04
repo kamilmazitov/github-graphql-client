@@ -16,6 +16,9 @@ const AppHeader = () => {
           <li>
             <Link to="/popular">popular</Link>
           </li>
+          <li>
+            <Link to="/account">My Account</Link>
+          </li>
         </ul>
       </Nav>
     </StyledHeader>

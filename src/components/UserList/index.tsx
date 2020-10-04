@@ -2,7 +2,6 @@ import React from "react";
 import { UserGrid } from "./styles";
 import UserTile from "../UserTile";
 import { gql } from "apollo-boost";
-import Container from "../Container";
 import { useQuery } from "@apollo/react-hooks";
 import { IUser } from "../../types";
 import Button from "../Button";
@@ -54,7 +53,7 @@ const UserList = ({ searchTerm }: IProps) => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <Container maxWidth={1200}>
+    <>
       <UserGrid>
         {data &&
           data.search.edges.map(({ user }) => {
@@ -66,7 +65,7 @@ const UserList = ({ searchTerm }: IProps) => {
           load more
         </Button>
       )}
-    </Container>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ interface IProps {
   maxWidth?: number;
 }
 
-const Container = ({ children, maxWidth = 700 }: IProps) => {
+const Container = ({ children, maxWidth = 1900 }: IProps) => {
   return <StyledContainer maxWidth={maxWidth}>{children}</StyledContainer>;
 };
 
