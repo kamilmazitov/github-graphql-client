@@ -3,6 +3,7 @@ import RepoList from "../../components/RepoList";
 import ButtonGroup from "../../components/ButtonGroup";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
+import ErrorBoundary from "../../components/ErrorBoundary";
 
 const Popular = () => {
   const [language, setLanguage] = useState("javascript");
@@ -17,7 +18,9 @@ const Popular = () => {
         <Button onClick={() => setLanguage("typescript")}>TS</Button>
         <Button onClick={() => setLanguage("css")}>CSS</Button>
       </ButtonGroup>
-      <RepoList language={language} />
+      <ErrorBoundary>
+        <RepoList language={language} />
+      </ErrorBoundary>
     </div>
   );
 };

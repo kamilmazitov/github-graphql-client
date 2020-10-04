@@ -11,7 +11,6 @@ interface IProps {
 }
 
 const RepoListItem = ({ repository }: IProps) => {
-  // console.log(repository);
   return (
     <StyledRepoItem>
       <Heading as={"h3"}>{repository.name}</Heading>
@@ -29,7 +28,7 @@ const RepoListItem = ({ repository }: IProps) => {
           <GoStar color={theme.colors.primary} />
           {repository.stargazers.totalCount}
         </li>
-        <li>{repository.licenseInfo.spdxId}</li>
+        <li>{repository.licenseInfo && repository.licenseInfo.spdxId}</li>
         <li>{format(new Date(repository.updatedAt), "dd-MM-yyyy")}</li>
       </Details>
     </StyledRepoItem>
