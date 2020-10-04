@@ -28,13 +28,11 @@ const RepoList = ({ language = "javascript" }: IProps) => {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <Container maxWidth={1900}>
-      <Grid>
-        {data?.search.edges.map(({ repository }) => (
-          <RepoListItem key={repository.id} repository={repository} />
-        ))}
-      </Grid>
-    </Container>
+    <Grid>
+      {data?.search.edges.map(({ repository }) => (
+        <RepoListItem key={repository.id} repository={repository} />
+      ))}
+    </Grid>
   );
 };
 
