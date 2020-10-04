@@ -1,10 +1,9 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
 import { Grid } from "./styles";
-
 import RepoListItem from "../RepoListItem";
 import { IRepository } from "../../types";
+import { SEARCH_POPULAR_REPOS } from "../../Queries";
 
 interface IRepoSearchResult {
   search: {
@@ -36,35 +35,3 @@ const RepoList = ({ language = "javascript" }: IProps) => {
 };
 
 export default RepoList;
-
-const SEARCH_POPULAR_REPOS = gql`
-  query searchPopularRepos($queryString: String!) {
-    search(query: $queryString, type: REPOSITORY, first: 12) {
-      repositoryCount
-      edges {
-        repository: node {
-          ... on Repository {
-            id
-            name
-            description
-            stargazers {
-              totalCount
-            }
-            updatedAt
-            licenseInfo {
-              spdxId
-            }
-            forks {
-              totalCount
-            }
-            primaryLanguage {
-              id
-              name
-              color
-            }
-          }
-        }
-      }
-    }
-  }
-`;

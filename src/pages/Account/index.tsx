@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "../../components/Container";
 import { useQuery } from "@apollo/react-hooks";
-import { gql } from "apollo-boost";
 import { UserInfo, Img } from "./styles";
 import Heading from "../../components/Heading";
+import { GET_USER } from "../../Queries";
 
 interface IGetUserResponse {
   viewer: {
@@ -48,26 +48,5 @@ const Account = () => {
     </Container>
   );
 };
-
-const GET_USER = gql`
-  query getUser {
-    viewer {
-      login
-      name
-      location
-      avatarUrl(size: 150)
-      bio
-      websiteUrl
-      starredRepositories(last: 10) {
-        edges {
-          node {
-            id
-            name
-          }
-        }
-      }
-    }
-  }
-`;
 
 export default Account;

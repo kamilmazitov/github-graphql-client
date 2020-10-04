@@ -1,10 +1,10 @@
 import React from "react";
 import { UserGrid } from "./styles";
 import UserTile from "../UserTile";
-import { gql } from "apollo-boost";
 import { useQuery } from "@apollo/react-hooks";
 import { IUser } from "../../types";
 import Button from "../Button";
+import { SEARCH_USER } from "../../Queries";
 
 interface IEdge {
   cursor: string;
@@ -70,21 +70,3 @@ const UserList = ({ searchTerm }: IProps) => {
 };
 
 export default UserList;
-
-const SEARCH_USER = gql`
-  query userSearch($queryString: String!, $cursor: String) {
-    search(query: $queryString, type: USER, first: 12, after: $cursor) {
-      edges {
-        cursor
-        user: node {
-          ... on User {
-            id
-            name
-            avatarUrl
-            login
-          }
-        }
-      }
-    }
-  }
-`;
