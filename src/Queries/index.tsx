@@ -41,6 +41,11 @@ export const GET_USER = gql`
       avatarUrl(size: 150)
       bio
       websiteUrl
+      status {
+        id
+        message
+        emoji
+      }
       starredRepositories(last: 10) {
         edges {
           node {

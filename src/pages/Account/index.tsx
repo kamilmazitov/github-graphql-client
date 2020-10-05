@@ -5,6 +5,8 @@ import { UserInfo, Img } from "./styles";
 import Heading from "../../components/Heading";
 import { GET_USER } from "../../Queries";
 
+import StatusForm from "../../components/StatusForm";
+
 interface IGetUserResponse {
   viewer: {
     login: string;
@@ -13,6 +15,11 @@ interface IGetUserResponse {
     avatarUrl: string;
     bio: string;
     websiteUrl: string;
+    status: {
+      id: string;
+      message: string;
+      emoji: string;
+    };
     starredRepositories: {
       edges: {
         node: {
@@ -28,7 +35,7 @@ const Account = () => {
   const { data, loading, error } = useQuery<IGetUserResponse>(GET_USER);
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error...</p>;
+  if (error) return <p>{error.message}</p>;
 
   return (
     <Container>
@@ -40,11 +47,15 @@ const Account = () => {
           <Heading as={"h1"} size={"1.5rem"}>
             {data?.viewer.name}
           </Heading>
-          <p>{data?.viewer.location}</p>
-          <p>{data?.viewer.bio}</p>
-          <p>{data?.viewer.websiteUrl}</p>
+          <ul>
+            <li>{data?.viewer.location}</li>
+            <li>{data?.viewer.bio}</li>
+            <li>{data?.viewer.websiteUrl}</li>
+            <li>Status: {data?.viewer.status.message}</li>
+          </ul>
         </div>
       </UserInfo>
+      <StatusForm />
     </Container>
   );
 };
