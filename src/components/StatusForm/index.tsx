@@ -22,7 +22,12 @@ const StatusForm = () => {
   return (
     <StyledForm onSubmit={handleSubmit}>
       <label htmlFor="status-message">Update status</label>
-      <Input id="status-message" value={value} onChange={handleChange} />
+      <Input
+        id="status-message"
+        value={value}
+        onChange={handleChange}
+        marginBottom={10}
+      />
       <Button type="submit">submit</Button>
     </StyledForm>
   );

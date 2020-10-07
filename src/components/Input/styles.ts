@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{ marginBottom: number }>`
   width: 100%;
   font-size: 1rem;
   padding-left: 1rem;
@@ -14,4 +14,5 @@ export const StyledInput = styled.input`
   border-width: 1px;
   border-style: solid;
   border-color: inherit;
+  margin-bottom: ${props => props.marginBottom}px;
 `;

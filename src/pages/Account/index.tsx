@@ -51,7 +51,7 @@ const Account = () => {
             <li>{data?.viewer.location}</li>
             <li>{data?.viewer.bio}</li>
             <li>{data?.viewer.websiteUrl}</li>
-            <li>Status: {data?.viewer.status.message}</li>
+            <li>Status: {data?.viewer.status?.message}</li>
           </ul>
         </div>
       </UserInfo>
