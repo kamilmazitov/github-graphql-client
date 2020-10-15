@@ -7,6 +7,7 @@ import Layout from "../Layout";
 import Search from "../../pages/Search";
 import Popular from "../../pages/Popular";
 import Account from "../../pages/Account";
+import UserProfile from "../../pages/UserProfile";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,9 @@ const App: React.FC = () => {
             </Route>
             <Route path="/account">
               <Account />
+            </Route>
+            <Route path="/users/:id">
+              <UserProfile />
             </Route>
             <Route path="/">
               <Search />

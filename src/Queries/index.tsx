@@ -32,7 +32,7 @@ export const SEARCH_POPULAR_REPOS = gql`
   }
 `;
 
-export const GET_USER = gql`
+export const LOGGED_IN_USER = gql`
   query getUser {
     viewer {
       login
@@ -69,9 +69,73 @@ export const SEARCH_USER = gql`
             name
             avatarUrl
             login
+            bio
           }
         }
       }
     }
   }
 `;
+
+export const USER = gql`
+  query UserQuery($username: String!) {
+    user(login: $username) {
+      id
+      name
+      bio
+      login
+      avatarUrl
+      status {
+        id
+        message
+        emoji
+      }
+    }
+  }
+`;
+
+// # organizations(first: 10) {
+//   #   nodes {
+//   #     ...Org
+//   #   }
+//   # }
+//   # repositories(
+//   #   first: 10
+//   #   isFork: false
+//   #   orderBy: { field: STARGAZERS, direction: DESC }
+//   # ) {
+//   #   nodes {
+//   #     ...Repo
+//   #   }
+//   # }
+
+// fragment UserHeader on User {
+
+// }
+
+// Org.fragment = gql`;
+//   fragment Org on Organization {
+//     id
+//     name
+//     avatarUrl
+//   }
+// `;
+
+// fragment Repo on Repository {
+//   id
+//   ...RepoHeader
+//   ...RepoStats
+// }
+
+// ${RepoStats.fragment}
+// ${RepoHeader.fragment}
+// `;
+
+// fragment RepoHeader on Repository {
+//   id
+//   url
+//   name
+//   description
+//   ...ToggleStarButton
+// }
+// ${ToggleStarButton.fragment}

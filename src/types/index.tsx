@@ -3,6 +3,7 @@ export interface IUser {
   name: string;
   avatarUrl: string;
   login: string;
+  bio: string;
 }
 
 export interface IRepository {

@@ -3,8 +3,7 @@ import Container from "../../components/Container";
 import { useQuery } from "@apollo/react-hooks";
 import { UserInfo, Img } from "./styles";
 import Heading from "../../components/Heading";
-import { GET_USER } from "../../Queries";
-
+import { LOGGED_IN_USER } from "../../Queries";
 import StatusForm from "../../components/StatusForm";
 
 interface IGetUserResponse {
@@ -13,6 +12,7 @@ interface IGetUserResponse {
     name: string;
     location: string;
     avatarUrl: string;
+
     bio: string;
     websiteUrl: string;
     status: {
@@ -32,7 +32,7 @@ interface IGetUserResponse {
 }
 
 const Account = () => {
-  const { data, loading, error } = useQuery<IGetUserResponse>(GET_USER);
+  const { data, loading, error } = useQuery<IGetUserResponse>(LOGGED_IN_USER);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;
