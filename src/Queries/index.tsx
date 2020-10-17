@@ -90,6 +90,15 @@ export const USER = gql`
         message
         emoji
       }
+      organizations(first: 10) {
+        edges {
+          node {
+            id
+            name
+            description
+          }
+        }
+      }
       repositories(
         first: 10
         isFork: false
@@ -98,7 +107,6 @@ export const USER = gql`
         edges {
           node {
             id
-            url
             name
             description
           }
