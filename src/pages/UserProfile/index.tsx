@@ -20,6 +20,7 @@ const UserProfile = () => {
 
   return (
     <div>
+      {/* <UserTile user={data.user} /> */}
       <Debug data={data} />
     </div>
   );

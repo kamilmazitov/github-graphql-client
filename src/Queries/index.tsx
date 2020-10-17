@@ -90,6 +90,20 @@ export const USER = gql`
         message
         emoji
       }
+      repositories(
+        first: 10
+        isFork: false
+        orderBy: { field: CREATED_AT, direction: DESC }
+      ) {
+        edges {
+          node {
+            id
+            url
+            name
+            description
+          }
+        }
+      }
     }
   }
 `;
