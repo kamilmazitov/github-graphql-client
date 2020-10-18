@@ -1,6 +1,6 @@
 import React from "react";
 import { UserGrid } from "./styles";
-import UserTile from "../UserTile";
+import UserListItem from "../UserListItem";
 import { useQuery } from "@apollo/react-hooks";
 import { IUser } from "../../types";
 import Button from "../Button";
@@ -57,7 +57,7 @@ const UserList = ({ searchTerm }: IProps) => {
       <UserGrid>
         {data &&
           data.search.edges.map(({ user }) => {
-            return <UserTile key={user.id} user={user} />;
+            return <UserListItem key={user.id} user={user} />;
           })}
       </UserGrid>
       {data && data.search.edges.length > 0 && (

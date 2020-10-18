@@ -7,7 +7,7 @@ interface IProps {
   user: IUser;
 }
 
-const UserTile = ({ user }: IProps) => {
+const UserListItem = ({ user }: IProps) => {
   return (
     <StyledTile>
       <FlexWrapper>
@@ -26,4 +26,4 @@ const UserTile = ({ user }: IProps) => {
   );
 };
 
-export default UserTile;
+export default UserListItem;

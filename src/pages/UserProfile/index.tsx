@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { USER } from "../../Queries";
 import Debug from "../../components/Debug";
+// import UserTile from "../../components/UserTile";
 
 const UserProfile = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const UserProfile = () => {
 
   return (
     <div>
+      {/* <UserTile user={data.user} /> */}
       {/* <UserTile user={data.user} /> */}
       <Debug data={data} />
     </div>

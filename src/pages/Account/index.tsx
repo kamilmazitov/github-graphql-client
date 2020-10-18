@@ -1,18 +1,17 @@
 import React from "react";
 import Container from "../../components/Container";
 import { useQuery } from "@apollo/react-hooks";
-import { UserInfo, Img } from "./styles";
-import Heading from "../../components/Heading";
 import { LOGGED_IN_USER } from "../../Queries";
 import StatusForm from "../../components/StatusForm";
+import UserProfileCard from "../../components/UserProfileCard";
 
 interface IGetUserResponse {
   viewer: {
+    id: string;
     login: string;
     name: string;
     location: string;
     avatarUrl: string;
-
     bio: string;
     websiteUrl: string;
     status: {
@@ -39,22 +38,7 @@ const Account = () => {
 
   return (
     <Container>
-      <UserInfo>
-        <Img>
-          <img src={data?.viewer.avatarUrl} alt={data?.viewer.name} />
-        </Img>
-        <div>
-          <Heading as={"h1"} size={"1.5rem"}>
-            {data?.viewer.name}
-          </Heading>
-          <ul>
-            <li>{data?.viewer.location}</li>
-            <li>{data?.viewer.bio}</li>
-            <li>{data?.viewer.websiteUrl}</li>
-            <li>Status: {data?.viewer.status?.message}</li>
-          </ul>
-        </div>
-      </UserInfo>
+      <UserProfileCard user={data!.viewer} />
       <StatusForm />
     </Container>
   );

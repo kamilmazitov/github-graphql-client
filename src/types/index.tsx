@@ -4,6 +4,11 @@ export interface IUser {
   avatarUrl: string;
   login: string;
   bio: string;
+  location: string;
+  websiteUrl: string;
+  status?: {
+    message: string;
+  };
 }
 
 export interface IRepository {
