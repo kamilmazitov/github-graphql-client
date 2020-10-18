@@ -2,7 +2,7 @@ import React from "react";
 import { StyledFooter } from "./styles";
 
 const AppFooter = () => {
-  return <StyledFooter>hi</StyledFooter>;
+  return <StyledFooter />;
 };
 
 export default AppFooter;

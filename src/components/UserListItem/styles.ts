@@ -9,7 +9,6 @@ export const StyledTile = styled.div`
 
 export const FlexWrapper = styled.div`
   display: flex;
-  /* outline: 1px dashed yellow; */
   align-items: center;
 `;
 

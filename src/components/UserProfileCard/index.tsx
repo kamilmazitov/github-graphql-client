@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledCard, UserInfo } from "./styles";
+import { StyledCard, UserInfo, Img } from "./styles";
 import Heading from "../Heading";
 import { IUser } from "../../types";
 
@@ -10,9 +10,9 @@ interface IProps {
 const UserProfileCard = ({ user }: IProps) => {
   return (
     <StyledCard>
-      <div>
+      <Img>
         <img src={user.avatarUrl} alt={user.name} />
-      </div>
+      </Img>
 
       <UserInfo>
         <Heading as={"h1"} size={"1.5rem"}>

@@ -14,4 +14,5 @@ export const UserInfo = styled.div`
 
 export const Img = styled.figure`
   margin-right: ${theme.spacing.normal};
+  max-width: 300px;
 `;

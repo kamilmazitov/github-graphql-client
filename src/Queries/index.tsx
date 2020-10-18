@@ -35,6 +35,7 @@ export const SEARCH_POPULAR_REPOS = gql`
 export const LOGGED_IN_USER = gql`
   query getUser {
     viewer {
+      id
       login
       name
       location
@@ -84,7 +85,7 @@ export const USER = gql`
       name
       bio
       login
-      avatarUrl
+      avatarUrl(size: 150)
       status {
         id
         message
@@ -115,49 +116,3 @@ export const USER = gql`
     }
   }
 `;
-
-// # organizations(first: 10) {
-//   #   nodes {
-//   #     ...Org
-//   #   }
-//   # }
-//   # repositories(
-//   #   first: 10
-//   #   isFork: false
-//   #   orderBy: { field: STARGAZERS, direction: DESC }
-//   # ) {
-//   #   nodes {
-//   #     ...Repo
-//   #   }
-//   # }
-
-// fragment UserHeader on User {
-
-// }
-
-// Org.fragment = gql`;
-//   fragment Org on Organization {
-//     id
-//     name
-//     avatarUrl
-//   }
-// `;
-
-// fragment Repo on Repository {
-//   id
-//   ...RepoHeader
-//   ...RepoStats
-// }
-
-// ${RepoStats.fragment}
-// ${RepoHeader.fragment}
-// `;
-
-// fragment RepoHeader on Repository {
-//   id
-//   url
-//   name
-//   description
-//   ...ToggleStarButton
-// }
-// ${ToggleStarButton.fragment}

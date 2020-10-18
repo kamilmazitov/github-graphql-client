@@ -2,8 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
 import { USER } from "../../Queries";
-import Debug from "../../components/Debug";
-// import UserTile from "../../components/UserTile";
+import UserProfileCard from "../../components/UserProfileCard";
 
 const UserProfile = () => {
   const { id } = useParams();
@@ -21,9 +20,7 @@ const UserProfile = () => {
 
   return (
     <div>
-      {/* <UserTile user={data.user} /> */}
-      {/* <UserTile user={data.user} /> */}
-      <Debug data={data} />
+      <UserProfileCard user={data.user} />
     </div>
   );
 };
