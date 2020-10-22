@@ -3,3 +3,5 @@
 https://developer.github.com/v4/
 
 https://developer.github.com/v4/guides/forming-calls/#the-graphql-endpoint
+
+![example](/screenshot.png)
