@@ -28,7 +28,7 @@ const StatusForm = () => {
         onChange={handleChange}
         marginBottom={10}
       />
-      <Button type="submit">submit</Button>
+      <Button type="submit">Submit</Button>
     </StyledForm>
   );
 };

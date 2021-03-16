@@ -5,6 +5,7 @@ export const StyledCard = styled.div`
   background-color: ${theme.colors.tileGrey};
   padding: ${theme.spacing.normal};
   display: flex;
+  margin-bottom: 1em;
 `;
 
 export const UserInfo = styled.div`

@@ -47,11 +47,25 @@ export const LOGGED_IN_USER = gql`
         message
         emoji
       }
-      starredRepositories(last: 10) {
-        edges {
-          node {
+      repositories(last: 10) {
+        nodes {
+          id
+          name
+          description
+          stargazers {
+            totalCount
+          }
+          updatedAt
+          licenseInfo {
+            spdxId
+          }
+          forks {
+            totalCount
+          }
+          primaryLanguage {
             id
             name
+            color
           }
         }
       }
@@ -91,25 +105,29 @@ export const USER = gql`
         message
         emoji
       }
-      organizations(first: 10) {
-        edges {
-          node {
-            id
-            name
-            description
-          }
-        }
-      }
       repositories(
         first: 10
         isFork: false
         orderBy: { field: CREATED_AT, direction: DESC }
       ) {
-        edges {
-          node {
+        nodes {
+          id
+          name
+          description
+          stargazers {
+            totalCount
+          }
+          updatedAt
+          licenseInfo {
+            spdxId
+          }
+          forks {
+            totalCount
+          }
+          primaryLanguage {
             id
             name
-            description
+            color
           }
         }
       }

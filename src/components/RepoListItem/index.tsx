@@ -15,10 +15,10 @@ const RepoListItem = ({ repository }: IProps) => {
     <StyledRepoItem>
       <Heading as={"h3"}>{repository.name}</Heading>
       <Description>{repository.description}</Description>
-      <Details color={repository.primaryLanguage.color}>
+      <Details color={repository.primaryLanguage?.color}>
         <li>
           <span />
-          {repository.primaryLanguage.name}
+          {repository.primaryLanguage?.name}
         </li>
         <li>
           <GoRepoForked color={theme.colors.primary} />

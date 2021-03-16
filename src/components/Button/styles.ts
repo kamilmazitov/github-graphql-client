@@ -13,6 +13,7 @@ export const StyledButton = styled.button`
   border-radius: 3px;
   -webkit-appearance: none;
   color: white;
+  margin-bottom: 1em;
 
   &:active,
   &:hover {

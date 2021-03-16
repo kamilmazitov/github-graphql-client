@@ -1,14 +1,9 @@
-export interface IUser {
-  id: string;
-  name: string;
-  avatarUrl: string;
-  login: string;
-  bio: string;
-  location: string;
-  websiteUrl: string;
-  status?: {
-    message: string;
-  };
+import React from "react";
+import { Grid } from "./styles";
+import RepoListItem from "../RepoListItem";
+
+interface IProps {
+  language?: string;
   repositories: {
     nodes: Array<{ name: string;
                    id: string;
@@ -29,25 +24,17 @@ export interface IUser {
                      color: string;
                    }; }>;
   };
+
 }
 
-export interface IRepository {
-  name: string;
-  id: string;
-  description: string;
-  updatedAt: Date;
-  licenseInfo: {
-    spdxId: string;
-  };
-  stargazers: {
-    totalCount: number;
-  };
-  forks: {
-    totalCount: number;
-  };
-  primaryLanguage: {
-    id: string;
-    name: string;
-    color: string;
-  };
-}
+const UserRepoList = ({ language = "javascript", repositories }: IProps) => {
+  return (
+    <Grid>
+      {repositories.nodes.map(( node ) => (
+        <RepoListItem repository={node} />
+      ))}
+    </Grid>
+  );
+};
+
+export default UserRepoList;
