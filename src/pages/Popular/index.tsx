@@ -12,7 +12,7 @@ const Popular = () => {
   return (
     <Container maxWidth={1900}>
       <Heading size={"1.2rem"} marginBottom={15}>
-        popular repositories
+        Popular repositories
       </Heading>
       <ButtonGroup>
         <Button onClick={() => setLanguage("javascript")}>JS</Button>

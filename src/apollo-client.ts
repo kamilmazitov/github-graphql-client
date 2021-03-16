@@ -5,7 +5,7 @@ const client = new ApolloClient({
   request: async operation => {
     operation.setContext({
       headers: {
-        authorization: `Bearer ${process.env.REACT_APP_GITHUB_KEY}`
+        authorization: `Bearer ${localStorage.getItem('token')}`
       }
     });
   }

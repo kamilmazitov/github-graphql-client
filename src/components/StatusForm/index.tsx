@@ -7,7 +7,7 @@ import { useMutation } from "@apollo/react-hooks";
 
 const StatusForm = () => {
   const [value, setValue] = useState("");
-  const [changeUserStatus, { data }] = useMutation(UPDATE_STATUS);
+  const [changeUserStatus] = useMutation(UPDATE_STATUS);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
