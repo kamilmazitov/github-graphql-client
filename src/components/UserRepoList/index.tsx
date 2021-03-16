@@ -31,7 +31,7 @@ const UserRepoList = ({ language = "javascript", repositories }: IProps) => {
   return (
     <Grid>
       {repositories.nodes.map(( node ) => (
-        <RepoListItem repository={node} />
+        <RepoListItem repository={node} key={node.id} />
       ))}
     </Grid>
   );
